@@ -18,7 +18,7 @@ image = Image.open('images/cars41.jpg')
 st.title("Project: Carbon Dioxide Emissiion.🚦")
 st.image(image)
 st.markdown('- ### **Business Objective:''The fundamental goal here is to model the CO2 emissions as a function of several car engine features.**')
-next =st.radio("Select:",['Data Analysis','Predict using model'])
+next =st.radio("Select:",['Data Analysis','Predict using model'],index=1)
 st.markdown('***')
 
 df = helper.get_Data('Data/co2_emissions (1).csv')
@@ -309,8 +309,11 @@ if next =='Predict using model':
             i7 = st.selectbox("Fuel Type :", i,help=("X = Regular gasoline, Z = Premium gasoline, D = Diesel, E= Ethanol(E85), N = Natural gas."))
         #------
         with col8 :
-            i8 = st.number_input("Enter the combined fuel consumption rating (55% city, 45% highway), in L/100 km.",
-                                 min_value=float(0),max_value=float(50),step=float(1.0))
+            milege = st.number_input("Enter the milege in km/litre.",
+                                 min_value=float(1),max_value=float(100),step=float(1.0),help=("The number of Kilometers your vehicle covers in 1 Litre of fuel."))
+            i8 = (100/milege)
+
+
         #data preprocessing
 
         df = helper.preprocessing1(df, 'co2_emissions')
@@ -399,8 +402,9 @@ if next =='Predict using model':
             c.sort()
             i5 = st.selectbox("Select Fuel Type :" , c,help=("X = Regular gasoline, Z = Premium gasoline, D = Diesel, E= Ethanol(E85), N = Natural gas."))
         with col6 :
-            i6 = st.number_input("Enter the combined fuel consumption rating (55% city, 45% highway), in L/100 km.",
-                                 min_value=float(0),max_value=float(50),step=float(1.0))
+            milege = st.number_input("Enter the milege in km/litre.",
+                                 min_value=float(1),max_value=float(100),step=float(1.0),help=("The number of Kilometers your vehicle covers in 1 Litre of fuel."))
+            i6 = (100/milege)
 
 
         #### Data preprocessing
@@ -476,11 +480,13 @@ st.markdown("\n")
 st.markdown("\n")
 st.markdown("\n")
 st.markdown("\n")
+st.markdown("\n")
+st.markdown("\n")
 
 
 
 
 
 #st.markdown("---")
-st.markdown(" Developed by `SKY`.   ⇨[github ](https://github.com/suraj4502), [Linkedin](https://www.linkedin.com/in/surajkumar-yadav-6ab2011a4/),[Ig](https://www.instagram.com/suraj452/).")
+st.markdown("- Developed by `SKY`.   ⇨[github ](https://github.com/suraj4502), [Linkedin](https://www.linkedin.com/in/surajkumar-yadav-6ab2011a4/),[Ig](https://www.instagram.com/suraj452/).")
 #st.markdown("---")
