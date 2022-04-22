@@ -8,7 +8,7 @@ import helper
 
 
 
-st.set_page_config(page_title='Welcome 🖤', page_icon='👻', layout="wide", initial_sidebar_state="collapsed", menu_items=None)
+st.set_page_config(page_title='Co2-emission🚗🌫️‍', page_icon='👻', layout="wide", initial_sidebar_state="collapsed", menu_items=None)
 
 
 from PIL import Image
